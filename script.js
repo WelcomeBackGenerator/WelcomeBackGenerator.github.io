@@ -79,7 +79,7 @@ const getRandomYear = () => {
 const start = () => {
     document.querySelector("#generate").addEventListener("click", generate);
 
-    generate(true);
+    generate(false);
 };
 
 const generate = async (setLoad) => {
