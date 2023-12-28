@@ -1,53 +1,68 @@
-<!--
-    Bienvenue dans le code source de ce mini-projet codé absolument n'importe comment
-    Je sais qu'il y a des soucis sur les dates (notamment Michael Jordan dans les morts de 2003 parce qu'il a arrêté sa carrière à ce moment, etc)
-
-    Quelques TODO que j'aimerais bien faire mais j'ai un peu envie de profiter de mes vacances à Taiwan
-    - Options avancées qu'on pourrait faire apparaître en cliquant sur un bouton :
-        - Un slider pour choisir la popularité minimale (actuellement 50, le dataset descend jusqu'à 30)
-        - Possibilité de choisir l'année exacte
-        - Case à cocher pour faire apparaître davantage de français.es (index 5 du tableau)
-        - Option pour matcher la date exacte ?
-    - Un peu d'i18n
-
-    N'hésitez pas à faire des PR sur GitHub ! >>> https://github.com/WelcomeBackGenerator/WelcomeBackGenerator.github.io
--->
-
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="assets/style.css" />
-		<title>Random Person Generator</title>
-		<script src="assets/app.js"></script>
-	</head>
-	<body>
-		<section>
-			<div id="spinner"></div>
-			<div id="container">
-				<div id="container-people">
-					<div class="person-container" id="person1">
-						<p id="deathYear1"></p>
-						<img id="image1" alt="Person 1" />
-						<p class="caption" id="name1"></p>
-					</div>
-					<div class="person-container" id="person2">
-						<p id="birthYear2"></p>
-						<img id="image2" alt="Person 2" />
-						<p class="caption" id="name2"></p>
-					</div>
-				</div>
-			</div>
-			<div id="bon-retour">
-				<p id="bon-retour-text">Bon retour parmi nous ❤️</p>
-			</div>
-			<button id="generate">GÉNÉRER</button>
-		</section>
-
-		<footer class="footer">
-			Créé par <a href="https://twitter.com/MathisHammel" target="_blank">@MathisHammel</a> grâce aux données
-			<a href="https://donate.wikipedia.org/">WikiData</a>.
-		</footer>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="script.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Welcome Back Generator</title>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome Back Generator</h1>
+    </header>
+    <div id="container">
+      <div id="loader" class="hidden"></div>
+      <div id="main">
+        <div id="subjects">
+          <div class="titles">
+            <p>Mort(e) en&nbsp;<span id="first_subject_year">2008</span></p>
+            <p>Né(e) en&nbsp;<span id="second_subject_year">2008</span></p>
+          </div>
+          <div class="imgs">
+            <div id="first_subject_img">
+              <img
+                src="http://commons.wikimedia.org/wiki/Special:FilePath/Sydney%20Pollack.jpg"
+                alt="Sydney Pollack"
+              />
+            </div>
+            <div id="second_subject_img">
+              <img
+                src="http://commons.wikimedia.org/wiki/Special:FilePath/Unasul%2012.jpg"
+                alt="Union des nations sud-américaines"
+              />
+            </div>
+          </div>
+          <div class="subject_name">
+            <p id="first_subject_name">Sydney Pollack</p>
+            <p id="second_subject_name">Union des nations sud-américaines</p>
+          </div>
+        </div>
+        <p id="welcome-back">
+          Bon retour parmi nous
+          <span id="first_subject">Sydney Pollack</span> ❤️
+        </p>
+        <div id="button_generate">
+          <button id="generate">Générer</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>
+        Créé par
+        <a href="https://twitter.com/MathisHammel" target="_blank"
+          >@MathisHammel</a
+        >
+        grâce aux données
+        <a href="https://donate.wikipedia.org/" target="_blank">WikiData</a>.
+      </p>
+    </footer>
+  </body>
 </html>
