@@ -1,3 +1,18 @@
+<!--
+    Bienvenue dans le code source de ce mini-projet codé absolument n'importe comment
+    Je sais qu'il y a des soucis sur les dates (notamment Michael Jordan dans les morts de 2003 parce qu'il a arrêté sa carrière à ce moment, etc)
+
+    Quelques TODO que j'aimerais bien faire mais j'ai un peu envie de profiter de mes vacances à Taiwan
+    - Options avancées qu'on pourrait faire apparaître en cliquant sur un bouton :
+        - Un slider pour choisir la popularité minimale (actuellement 50, le dataset descend jusqu'à 30)
+        - Possibilité de choisir l'année exacte
+        - Case à cocher pour faire apparaître davantage de français.es (index 5 du tableau)
+        - Option pour matcher la date exacte ?
+    - Un peu d'i18n
+
+    N'hésitez pas à faire des PR sur GitHub ! >>> https://github.com/WelcomeBackGenerator/WelcomeBackGenerator.github.io
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,6 +93,24 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        .footer {
+            font-size: 14px;
+            font-weight: 300;
+            position: fixed;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            background-color: #000000;
+            padding: 10px;
+            color: white;
+        }
+
+        .footer a {
+            color: rgb(103, 174, 255);
+            text-decoration: none;
+        }
     </style>
     <title>Random Person Generator</title>
 </head>
@@ -101,6 +134,10 @@
         </div>
     </div>
     <button onclick="generate()">GÉNÉRER</button>
+
+    <footer class='footer'>
+        Créé par <a href='https://twitter.com/MathisHammel' target='_blank'>@MathisHammel</a> grâce aux données <a href="https://donate.wikipedia.org/">WikiData</a>.
+    </footer>
 
     <script>
         function generate() {
